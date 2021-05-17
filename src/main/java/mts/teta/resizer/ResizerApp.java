@@ -2,12 +2,13 @@ package mts.teta.resizer;
 
 import mts.teta.resizer.console.ConsoleAttributes;
 import mts.teta.resizer.imageprocessor.ImageProcessor;
+import mts.teta.resizer.staff.Staff;
 import picocli.CommandLine;
 
 import javax.imageio.ImageIO;
 import java.util.concurrent.Callable;
 
-@CommandLine.Command(name = "resizer", mixinStandardHelpOptions = true, version = "resizer 0.0.1", description = "...")
+@CommandLine.Command(name = "resizer", mixinStandardHelpOptions = true, version = "resizer 0.0.1", description = Staff.description)
 public class ResizerApp extends ConsoleAttributes implements Callable<Integer> {
     public static void main(String... args) {
         int exitCode = runConsole(args);
@@ -15,13 +16,14 @@ public class ResizerApp extends ConsoleAttributes implements Callable<Integer> {
     }
 
     protected static int runConsole(String[] args) {
-        return new CommandLine(new ResizerApp()).execute(args);
+
+        return new CommandLine(new ResizerApp()).execute(Staff.argsTest4);
     }
 
     @Override
     public Integer call() throws Exception {
-        /*ImageProcessor imageProcessor = new ImageProcessor();
-        imageProcessor.processImage(ImageIO.read(inputFile), this);*/
+        ImageProcessor imageProcessor = new ImageProcessor();
+        imageProcessor.processImage(ImageIO.read(inputFile), this);
         return 0;
     }
 }

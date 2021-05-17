@@ -8,5 +8,6 @@ public class ImageProcessor {
 
     public ImageProcessor() {}
 
-    public void processImage(BufferedImage inputImage, ResizerApp resizerApp) {}
+    public void processImage(BufferedImage inputImage, ResizerApp resizerApp) {
+    }
 }

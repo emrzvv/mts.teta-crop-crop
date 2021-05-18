@@ -77,7 +77,6 @@ class ResizerAppTest {
         app.call();
 
         BufferedImage reducedPreview = ImageIO.read(new File(absolutePathOutput));
-
         assertEquals(reducedPreview.getWidth(), reducedPreviewWidth);
         assertEquals(reducedPreview.getHeight(), reducedPreviewHeight);
     }

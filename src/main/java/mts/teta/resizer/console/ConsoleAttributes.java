@@ -78,4 +78,5 @@ public class ConsoleAttributes {
         newFormat = format;
         arguments.add(Staff.Operation.FORMAT);
     }
+
 }

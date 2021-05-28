@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 import java.util.concurrent.Callable;
 
 // mvn compile
-// mvn -Dexec.mainClass=mts.teta.resizer.ResizerApp
+// mvn exec:java -Dexec.mainClass=mts.teta.resizer.ResizerApp
 
 @CommandLine.Command(name = "resizer", mixinStandardHelpOptions = true, version = "resizer 0.0.1", description = Staff.description)
 public class ResizerApp extends ConsoleAttributes implements Callable<Integer> {
@@ -26,7 +26,7 @@ public class ResizerApp extends ConsoleAttributes implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         ImageProcessor imageProcessor = new ImageProcessor();
-        imageProcessor.processImage(ImageIO.read(inputFile), this);
+        imageProcessor.processImage(inputFile, this);
         return 0;
     }
 }

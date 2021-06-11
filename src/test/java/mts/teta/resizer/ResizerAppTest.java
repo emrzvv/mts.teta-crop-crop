@@ -1,6 +1,5 @@
 package mts.teta.resizer;
 
-import mts.teta.resizer.imageprocessor.BadAttributesException;
 import org.junit.jupiter.api.Test;
 
 import javax.imageio.IIOException;
@@ -10,7 +9,6 @@ import java.io.File;
 import java.net.URL;
 import java.nio.file.Paths;
 
-import static mts.teta.resizer.utils.MD5.getMD5;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ResizerAppTest {
@@ -79,7 +77,6 @@ class ResizerAppTest {
         app.call();
 
         BufferedImage reducedPreview = ImageIO.read(new File(absolutePathOutput));
-
         assertEquals(reducedPreview.getWidth(), reducedPreviewWidth);
         assertEquals(reducedPreview.getHeight(), reducedPreviewHeight);
     }
